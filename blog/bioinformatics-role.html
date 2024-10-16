@@ -5,12 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; connect-src 'self';">
     <title>The Role of Bioinformatics in Modern Science</title>
-    <link rel="stylesheet" href="../css/styles.css"> <!-- Link to your CSS file -->
+    
+    <!-- Inline CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        #nav-placeholder {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .blog-post-full {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #0056b3;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* Blog Section Styling */
+        @media only screen and (max-width: 600px) {
+            .blog-posts {
+                grid-template-columns: 1fr; /* Make posts stack vertically */
+            }
+        }
+
+        .blog-section {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .blog-section h2 {
+            text-align: center;
+            color: #bb86fc;
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-post {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-post h3 a {
+            color: #bb86fc;
+            text-decoration: none;
+        }
+
+        .blog-post h3 a:hover {
+            text-decoration: underline;
+        }
+
+        .blog-post p {
+            color: #e0e0e0;
+            margin-bottom: 10px;
+        }
+
+        .excerpt {
+            color: #ccc;
+        }
+
+        .blog-post .button {
+            margin-top: 10px;
+            background-color: #6200ea;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .blog-post .button:hover {
+            background-color: #3700b3;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Placeholder for the navigation bar -->
-    <div id="nav-placeholder"></div>
+    <div id="nav-placeholder">
+        <!-- Navigation Bar Here -->
+        Navigation Bar Placeholder
+    </div>
 
     <!-- Blog Post Content -->
     <section class="blog-post-full">
@@ -38,6 +164,28 @@
 
         <h2>Conclusion</h2>
         <p>Bioinformatics is reshaping the way we understand biological processes and diseases. Its interdisciplinary nature continues to open new frontiers in science, with the potential to revolutionize healthcare, agriculture, and environmental research. As the field advances, it will remain at the forefront of scientific innovation.</p>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-posts">
+            <div class="blog-post">
+                <h3><a href="#">Bioinformatics and Genomics</a></h3>
+                <p class="excerpt">Exploring the role of bioinformatics in understanding genomics...</p>
+                <a href="#" class="button">Read More</a>
+            </div>
+            <div class="blog-post">
+                <h3><a href="#">AI in Bioinformatics</a></h3>
+                <p class="excerpt">How artificial intelligence is revolutionizing bioinformatics...</p>
+                <a href="#" class="button">Read More</a>
+            </div>
+            <div class="blog-post">
+                <h3><a href="#">Data Analysis Techniques</a></h3>
+                <p class="excerpt">The top techniques in bioinformatics for data analysis...</p>
+                <a href="#" class="button">Read More</a>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
