@@ -61,12 +61,12 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
-    /*padding: 10px 15px;*/
+    padding: 10px 15px;
 }
 
 nav ul li a:hover {
     background-color: #6200ea;
-    /*border-radius: 5px;*/
+    border-radius: 5px;
 }
 
 /* Hero Section */

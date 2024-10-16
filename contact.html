@@ -31,12 +31,18 @@
     </footer>
     <!-- JavaScript to load the navigation -->
     <script>
-        fetch('nav.html')
-            .then(response => response.text())
+        fetch('nav.html?cache-bust=' + new Date().getTime())  // Add cache busting
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not OK');
+                }
+                return response.text();
+            })
             .then(data => {
                 document.getElementById('nav-placeholder').innerHTML = data;
             })
-            .catch(error => console.log('Error loading navigation:', error));
+            .catch(error => console.error('Error loading navigation:', error));
     </script>
+
 </body>
 </html>
