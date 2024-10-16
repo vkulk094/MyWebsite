@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building My Personal Website with GitHub Pages and Cloudflare</title>
+    <link rel="stylesheet" href="./blogstyle.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+    <!-- Placeholder for the navigation bar -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Blog Post Content -->
+    <section class="blog-post-full">
+        <h1>Building My Personal Website with GitHub Pages and Cloudflare</h1>
+        <p>Published on: October 16, 2024</p>
+
+        <p>Creating my personal website has been an exciting journey—one that taught me valuable lessons in web hosting, DNS management, and cloud services. From setting up the site on <strong>GitHub Pages</strong> to optimizing it with <strong>Cloudflare</strong>, the process was a great mix of creativity and technical problem-solving. In this post, I’ll share how I set up my site, overcame challenges, and optimized it for speed and security.</p>
+
+        <h2>Why I Chose GitHub Pages and Cloudflare</h2>
+        <p>I wanted to create a personal portfolio that showcased my research in bioinformatics and my projects. <strong>GitHub Pages</strong> was a natural choice because it's free, integrates seamlessly with version control, and is incredibly easy to deploy. On top of that, I decided to use <strong>Cloudflare</strong> to improve performance and security. Cloudflare’s CDN (Content Delivery Network) and SSL services are ideal for making sure my site is both fast and secure across the globe.</p>
+
+        <h2>Step 1: Setting Up GitHub Pages</h2>
+        <p>Setting up the website on GitHub was straightforward. Here's a quick overview of how I did it:</p>
+        <ul>
+            <li><strong>Create a GitHub Repository:</strong> I set up a new repository and named it after my domain: <code>vaibhavkulkarni.bio</code>.</li>
+            <li><strong>Push the Website Code:</strong> After coding the basic HTML, CSS, and JavaScript, I pushed everything to the <code>main</code> branch.</li>
+            <li><strong>Enable GitHub Pages:</strong> Under the repository settings, I enabled GitHub Pages by selecting the branch I wanted to serve as the source. GitHub Pages took care of the rest and deployed my site at <code>https://vaibhavkulkarni.github.io</code>.</li>
+        </ul>
+
+        <h2>Step 2: Integrating a Custom Domain</h2>
+        <p>The next step was to link my custom domain, <code>vaibhavkulkarni.bio</code>, to the GitHub Pages site. This was an important part of my project, as having a personal domain adds a layer of professionalism and branding to the website.</p>
+        <p>To do this, I:</p>
+        <ul>
+            <li>Added a <code>CNAME</code> file in the root directory of my repository that contained <code>vaibhavkulkarni.bio</code>.</li>
+            <li>Updated the DNS records on my domain registrar’s control panel, setting the CNAME to point to <code>vaibhavkulkarni.github.io</code>.</li>
+        </ul>
+        <p>After a few minutes, my site was live on the custom domain, but I noticed something was missing—<strong>HTTPS</strong>.</p>
+
+        <h2>Step 3: Optimizing with Cloudflare</h2>
+        <p>This is where Cloudflare comes in. I wanted to secure my site with <strong>SSL encryption</strong> and boost its performance using Cloudflare’s CDN. Here's how I did it:</p>
+        <ul>
+            <li><strong>Add Domain to Cloudflare:</strong> I signed up for a Cloudflare account and added <code>vaibhavkulkarni.bio</code> to their platform. Cloudflare provided me with two nameservers that I updated in my domain registrar’s dashboard.</li>
+            <li><strong>Enable SSL:</strong> I went to Cloudflare’s SSL/TLS settings and selected the <strong>Full</strong> option, which ensures end-to-end encryption between the user and GitHub Pages. Cloudflare automatically issued an SSL certificate for my domain.</li>
+            <li><strong>Performance Enhancements:</strong> I enabled Cloudflare’s CDN, which caches content across their global network of servers. This dramatically improved my site’s load time, especially for visitors from regions far from my hosting server.</li>
+        </ul>
+
+        <h2>Step 4: Overcoming Challenges</h2>
+        <p>While the process was generally smooth, I did encounter a few hiccups:</p>
+        <ul>
+            <li><strong>SSL Propagation Delay:</strong> After setting up Cloudflare’s SSL, it took a few hours for the HTTPS certificate to propagate fully. During that time, accessing the site over HTTPS led to an error. I had to be patient and monitor the progress until the SSL was fully deployed.</li>
+            <li><strong>DNS Cache Issues:</strong> After updating the DNS settings, I noticed that my site wasn't resolving correctly on some devices. Clearing the local DNS cache solved this problem, but I had to keep that in mind for future updates.</li>
+        </ul>
+
+        <h2>Lessons Learned</h2>
+        <p>This experience was not just about setting up a personal website; it was also an opportunity to learn more about web technologies, particularly hosting, DNS management, and web security.</p>
+        <ul>
+            <li><strong>Always Enable SSL:</strong> In today’s web environment, security is critical. Having HTTPS not only protects your visitors but also improves your site’s ranking on search engines.</li>
+            <li><strong>Use a CDN for Speed:</strong> Cloudflare’s CDN made a huge difference in the performance of my site. It ensures faster load times for visitors from different parts of the world, without me needing to configure complex server settings.</li>
+            <li><strong>Monitor DNS Changes:</strong> DNS propagation can take time, and issues like SSL errors or DNS cache mismatches can be frustrating. Understanding how these systems work made the troubleshooting process much easier.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Setting up my personal website was both rewarding and educational. GitHub Pages made it easy to deploy and maintain the site, while Cloudflare enhanced its security and performance. Going forward, I plan to continually update the site with my latest projects and blog posts, while keeping it fast and secure.</p>
+
+        <p>If you're looking to build your own website, I highly recommend exploring GitHub Pages and Cloudflare. The combination of free hosting and enterprise-level performance tools is hard to beat.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Vaibhav Kulkarni. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript file to load the navbar -->
+    <script src="scripts/navbar.js"></script>
+</body>
+</html>
