@@ -8,8 +8,39 @@
 </head>
 <body>
 
-    <!-- Placeholder for the navigation bar -->
-    <div id="nav-placeholder"></div>
+    <!-- Updated Navbar -->
+    <nav>
+        <!-- Logo -->
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Your Logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Hamburger Menu for Mobile -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Navbar Links with Dropdowns -->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li>
+                <a href="portfolio.html">Portfolio</a>
+                <!-- Dropdown -->
+                <div class="dropdown-content">
+                    <a href="#project1">Project 1</a>
+                    <a href="#project2">Project 2</a>
+                    <a href="#project3">Project 3</a>
+                </div>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <!-- Blog Section -->
     <section class="blog-section">
@@ -38,26 +69,21 @@
                 <p class="excerpt">Sharing the journey of building my first full-stack web application, from concept to deployment...</p>
                 <a href="blog/blog-post-fullstack.html" class="button">Read More</a>
             </div>
-        </section>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <p>© 2024 Vaibhav Kulkarni. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript to load the navigation -->
+    <!-- JavaScript to handle mobile menu toggle -->
     <script>
-        fetch('nav.html?cache-bust=' + new Date().getTime())  // Add cache busting
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not OK');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navigation:', error));
+        // Simple toggle function for mobile menu
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
     </script>
 
 </body>
