@@ -28,7 +28,7 @@ p, li {
 /* Navigation styles */
 nav {
     background-color: #1e1e1e;
-    padding: 10x 20px; /* Increase padding for larger navigation bar */
+    padding: 10px 20px; /* Increase padding for larger navigation bar */
     font-size: 30px; /* Larger font size for the navigation items */
     display: flex;
     align-items: center;
