@@ -28,8 +28,20 @@ p, li {
 /* Navigation styles */
 nav {
     background-color: #1e1e1e;
-    padding: 20px 0; /* Increase padding for larger navigation bar */
+    padding: 10x 20px; /* Increase padding for larger navigation bar */
     font-size: 30px; /* Larger font size for the navigation items */
+    display: flex;
+    align-items: center;
+}
+
+/* Style the logo */
+.logo-container {
+    margin-right: 20px; /* Adds some space between logo and links */
+}
+
+.logo {
+    width: 120px;  /* Adjust width to fit your design */
+    height: auto;  /* Keep aspect ratio */
 }
 
 nav ul {
@@ -42,19 +54,19 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin-right: 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.2em;
-    padding: 10px 15px;
+    font-size: 16px;
+    /*padding: 10px 15px;*/
 }
 
 nav ul li a:hover {
     background-color: #6200ea;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
 }
 
 /* Hero Section */
