@@ -175,26 +175,6 @@ p {
     color: #e0e0e0;
 }
 
-/* List Styling */
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-ul li {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-ul li::before {
-    /*content: "•"; /* Custom bullet point */
-    color: #bb86fc;
-    position: absolute;
-    left: 0;
-}
-
 .work-experience {
     max-width: 1440px; /* Keep sections consistent */
     margin: 0 auto;
