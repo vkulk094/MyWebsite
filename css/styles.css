@@ -29,8 +29,12 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #bb86fc;
+    color: #bb86fc; /* Purple accent */
     text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #d1a1fc; /* Hover effect for links */
 }
 
 /* Hero Section */
@@ -40,8 +44,12 @@ nav ul li a {
     background-color: #1e1e1e;
 }
 
-h1 {
-    color: #bb86fc;
+h1, h2, h3 {
+    color: #bb86fc; /* Purple accent for headings */
+}
+
+p, li {
+    color: #e0e0e0; /* Improved contrast for body text */
 }
 
 /* Basic section styles */
@@ -49,7 +57,279 @@ section {
     padding: 20px;
 }
 
-/* Gallery styles */
+/* Gallery Styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.gallery-item {
+    background-color: #202020;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.gallery-item h3 {
+    color: #bb86fc;
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.gallery-item p {
+    color: #ccc;
+    font-size: 1.1em;
+}
+
+/* Footer styling */
+footer {
+    background-color: #1e1e1e;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    color: #c1c1c1;
+}
+
+/* Contact Form Styling */
+.contact {
+    padding: 20px;
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #bb86fc;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d1a1fc;
+}
+
+/* About Page Styling */
+.about {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about h1 {
+    color: #bb86fc; /* Purple accent for heading */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about h2 {
+    color: #bb86fc;
+    font-size: 2em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #e0e0e0; /* Improve contrast */
+    margin-bottom: 20px;
+}
+
+.about ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about ul li {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+.about ul li::before {
+    content: "•"; /* Adds bullet point to list */
+    color: #bb86fc; /* Purple accent for bullet points */
+    margin-right: 8px;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+/* Link styling */
+.about a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #bb86fc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.about a.button:hover {
+    background-color: #d1a1fc;
+}
+
+/* Work Experience Styling */
+.about h2 {
+    margin-top: 50px; /* Adds some space above each section */
+}
+
+.about ul li p {
+    color: #ccc; /* Color for text in list */
+    margin-bottom: 10px;
+}
+
+
+/* Portfolio Section */
+.portfolio {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.portfolio h1 {
+    color: #bb86fc;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+/* Button Styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #bb86fc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #d1a1fc;
+}
+
+/* Center the About section and Work Experience */
+.about, .work-experience {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto; /* Centers the content horizontally */
+    text-align: left; /* Aligns the text to the left for readability */
+}
+
+/* Work Experience Specific Styling */
+.work-experience h2 {
+    color: #bb86fc;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.experience-item {
+    margin-bottom: 30px; /* Space between work experience items */
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333; /* Optional divider between items */
+}
+
+.experience-item h3 {
+    color: #bb86fc;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.experience-item p {
+    color: #ccc;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.experience-item strong {
+    color: #ffffff; /* Highlight employer/university names */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #1e1e1e;
+    color: #bb86fc;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.hero .button {
+    background-color: #bb86fc;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero .button:hover {
+    background-color: #d1a1fc;
+}
+
+/* Portfolio Highlights */
+.portfolio-highlights {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.portfolio-highlights h2 {
+    color: #bb86fc;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -57,18 +337,72 @@ section {
 }
 
 .gallery-item {
+    background-color: #202020;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
 }
 
 .gallery-item img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-footer {
-    background-color: #1e1e1e;
+.gallery-item h3 {
+    color: #bb86fc;
+    margin-bottom: 10px;
+}
+
+.gallery-item p {
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.gallery-item .button {
+    background-color: #bb86fc;
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.gallery-item .button:hover {
+    background-color: #d1a1fc;
+}
+
+/* Resume Section */
+.resume-section {
     text-align: center;
-    padding: 10px;
+    padding: 60px 20px;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.resume-section h2 {
+    color: #bb86fc;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.resume-section .button {
+    background-color: #bb86fc;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
     margin-top: 20px;
+}
+
+.resume-section .button:hover {
+    background-color: #d1a1fc;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
     color: #c1c1c1;
+    margin-top: 40px;
 }
