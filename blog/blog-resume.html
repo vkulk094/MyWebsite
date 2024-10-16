@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How I Crafted My Resume and Help Others Do the Same</title>
-    <link rel="stylesheet" href="/css/styles.css"> <!-- Link to your CSS file -->
+
+    <!-- Preloading the CSS for performance -->
+    <link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/styles.css"></noscript>
 </head>
 <body>
     
@@ -63,6 +66,6 @@
     </footer>
 
     <!-- JavaScript file to load the navbar -->
-    <script src="../scripts/navbar.js"></script>
+    <script src="../scripts/navbar.js" defer></script>
 </body>
 </html>
