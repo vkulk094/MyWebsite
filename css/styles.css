@@ -350,7 +350,7 @@ input:focus, textarea:focus {
     border-radius: 5px;
     cursor: pointer;
     width: 100%; /* Full width button */
-    max-width: 250px; /* Optional max width to limit button size */
+    max-width: 200px; /* Optional max width to limit button size */
     text-align: center;
     margin: 20px auto 0 auto; /* Adds space above and centers the button */
     display: block; /* Center the button */
@@ -359,19 +359,6 @@ input:focus, textarea:focus {
 .send-button:hover {
     background-color: #3700b3; /* Darker purple on hover */
     transition: background-color 0.3s ease;
-}
-
-/* Responsive Media Queries */
-@media (max-width: 600px) {
-    form {
-        width: 90%; /* Ensure the form takes most of the space on smaller screens */
-        padding: 20px;
-    }
-
-    .send-button {
-        font-size: 1.3em;
-        max-width: 100%; /* Make the button full-width on smaller screens */
-    }
 }
 
 /* Footer */
@@ -393,12 +380,13 @@ footer {
 }
 
 .blog-section {
-    max-width: 900px;
+    max-width: 1080px;
     margin: 50px auto;
     padding: 0 20px;
 }
 
 .blog-section h2 {
+    list-style: none;
     text-align: center;
     color: #bb86fc;
     font-size: 48px;
@@ -443,18 +431,6 @@ footer {
 
 .blog-post .button:hover {
     background-color: #3700b3;
-}
-
-@media only screen and (max-width: 768px) {
-    .hero h1 {
-        font-size: 36px;
-    }
-    .hero .button-group .button {
-        font-size: 1.5em; /* Reduce button size on smaller screens */
-    }
-    .gallery {
-        flex-direction: column;
-    }
 }
 
 /* Combine similar button hover effects */
