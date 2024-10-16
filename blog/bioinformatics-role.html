@@ -3,30 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Role of Bioinformatics in Modern Science | Vaibhav Kulkarni</title>
-    <link rel="stylesheet" href="../css/styles.css"> <!-- Link to your CSS -->
+    <title>The Role of Bioinformatics in Modern Science</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your CSS file -->
 </head>
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../portfolio.html">Portfolio</a></li>
-            <li><a href="../blog.html">Blog</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Placeholder for the navigation bar -->
+    <div id="nav-placeholder"></div>
 
+    <!-- Blog Post Content -->
     <section class="blog-post-full">
         <h1>The Role of Bioinformatics in Modern Science</h1>
         <p>Published on: January 10, 2024</p>
-        <p>This is where the full content of the blog post goes. You can write as much content as necessary, include images, code snippets, etc.</p>
+
+        <p>In this blog post, we will explore how bioinformatics has become a critical field in modern scientific research...</p>
+
+        <!-- Add the rest of your blog content here -->
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>© 2024 Vaibhav Kulkarni. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript to load the navigation -->
+    <script>
+        fetch('nav.html?cache-bust=' + new Date().getTime())
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            })
+            .catch(error => console.log('Error loading navigation:', error));
+    </script>
 
 </body>
 </html>

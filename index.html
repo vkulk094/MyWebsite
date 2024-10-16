@@ -8,16 +8,9 @@
     <link rel="stylesheet" href="css/styles.css"> <!-- Link to your CSS -->
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="blog.html">Blog</a></li> <!-- New Blog Link -->
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    
+    <!-- Placeholder for the navigation -->
+    <div id="nav-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -89,5 +82,14 @@
         <p>© 2024 Vaibhav Kulkarni. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript to load the navigation -->
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            })
+            .catch(error => console.log('Error loading navigation:', error));
+    </script>
 </body>
 </html>

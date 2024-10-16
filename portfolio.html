@@ -7,14 +7,8 @@
     <link rel="stylesheet" href="css/styles.css"> <!-- Link to your CSS -->
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- This will load the navigation bar -->
+    <div id="nav-placeholder"></div>
     
     <section class="portfolio">
     <h1>My Portfolio</h1>
@@ -45,5 +39,21 @@
 <footer>
     <p>© 2024 My Name. All rights reserved.</p>
 </footer>
+
+<!-- JavaScript to load the navigation -->
+<script>
+    fetch('nav.html?cache-bust=' + new Date().getTime())  // Add cache busting
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not OK');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading navigation:', error));
+</script>
+
 </body>
 </html>
