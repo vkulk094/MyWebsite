@@ -44,24 +44,31 @@ nav {
     height: auto;  /* Keep aspect ratio */
 }
 
+/* Updated Navbar Styles */
+
+
+/* Default state: menu is hidden on small screens */
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    background-color: #1e1e1e;
-    padding: 20px;
-    margin: 0;
+    display: none; /* Hide the menu */
+    flex-direction: column; /* Stack links vertically for mobile */
+}
+
+/* When the .active class is added, show the menu */
+nav.active ul {
+    display: flex; /* Show the menu */
+    flex-direction: column; /* Ensure the links stack vertically */
+    background-color: #333; /* Set a background color if needed */
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin: 0 15px; /* Ensure items have balanced spacing */
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 45px;
-    padding: 10px 15px;
+    font-size: 1.5em; /* Adjust the font size to be more balanced */
+    padding: 10px 20px;
 }
 
 nav ul li a:hover {
@@ -446,15 +453,20 @@ footer {
     background-color: #3700b3;
 }
 
-@media only screen and (max-width: 768px) {
-    .hero h1 {
-        font-size: 36px;
+.hamburger {
+    display: block; /* Show the hamburger icon on small screens */
+    cursor: pointer;
+}
+
+/* For larger screens, always show the navigation */
+@media (min-width: 768px) {
+    nav ul {
+        display: flex; /* Make the menu always visible on larger screens */
+        justify-content: space-around;
     }
-    .hero .button-group .button {
-        font-size: 1.5em; /* Reduce button size on smaller screens */
-    }
-    .gallery {
-        flex-direction: column;
+
+    .hamburger {
+        display: none; /* Hide hamburger icon on larger screens */
     }
 }
 
@@ -467,10 +479,13 @@ footer {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #1e1e1e;
+    background-color: #333;
     min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
 }
 
 .dropdown-content a {
