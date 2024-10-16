@@ -5,23 +5,40 @@
     box-sizing: border-box;
 }
 
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212;
+    background-color: #121212; /* Dark background */
     color: white;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Typography */
+h1, h2, h3 {
+    color: #bb86fc; /* Purple accent for all headings */
+}
+
+p, li {
+    color: #e0e0e0; /* Consistent improved contrast for body text */
+    font-size: 1.5em; /* Base font size */
 }
 
 /* Navigation styles */
 nav {
     background-color: #1e1e1e;
-    padding: 10px;
+    padding: 20px 0; /* Increase padding for larger navigation bar */
+    font-size: 30px; /* Larger font size for the navigation items */
 }
 
 nav ul {
-    list-style: none;
+    /*list-style: none;*/
     display: flex;
     justify-content: center;
+    background-color: #1e1e1e;
+    padding: 20px;
+    margin: 0;
 }
 
 nav ul li {
@@ -29,53 +46,224 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #bb86fc; /* Purple accent */
+    color: white;
     text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px;
 }
 
 nav ul li a:hover {
-    color: #d1a1fc; /* Hover effect for links */
+    background-color: #6200ea;
+    border-radius: 5px;
 }
 
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 50px;
+    padding: 50px 20px;
     background-color: #1e1e1e;
+    color: white;
 }
 
-h1, h2, h3 {
-    color: #bb86fc; /* Purple accent for headings */
+.hero h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
 }
 
-p, li {
-    color: #e0e0e0; /* Improved contrast for body text */
+.hero p {
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 40px;
 }
 
-/* Basic section styles */
+/* General Button Styling */
+.button {
+    display: inline-block;
+    padding: 15px 30px; /* General padding for all buttons */
+    font-size: 1.8em; /* General button font size */
+    color: white;
+    background-color: #6200ea; /* Default purple button color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 20px 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #3700b3; /* Default darker purple on hover */
+}
+
+/* Section-specific button overrides */
+.linkedin-button {
+    background-color: #0077B5; /* LinkedIn blue */
+}
+
+.linkedin-button:hover {
+    background-color: #005582; /* Darker LinkedIn blue */
+}
+
+.resume-button {
+    background-color: #4CAF50; /* Green for resume button */
+}
+
+.resume-button:hover {
+    background-color: #388E3C; /* Darker green on hover */
+}
+
+/* Gallery Button Styling */
+.gallery-item .button {
+    padding: 8px 15px; /* Smaller padding for gallery buttons */
+    font-size: 1em; /* Adjust font size specifically for gallery buttons */
+}
+
+.gallery-item .button:hover {
+    background-color: #d1a1fc; /* Custom hover color for gallery buttons */
+}
+
+/* Hero Section Button Group */
+.hero .button-group {
+    display: flex; /* Align buttons in a row */
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    width: 100%; /* Make the button group take full width of the container */
+}
+
+.hero .button-group .button {
+    flex-grow: 1; /* Allow the buttons to grow and take up available space */
+   /* flex-basis: 30%; /* Set a minimum width for the buttons */
+    font-size: 2.8em; /* Adjust font size specifically for hero buttons */
+    padding: 15px 30px; /* Ensure consistent padding for hero buttons */
+   /* max-width: 300px; *//* Optional: limit the maximum width of each button */
+}
+
+/* Section Styling */
 section {
+    max-width: 1440px;
+    margin: 40px auto;
     padding: 20px;
 }
 
-/* Gallery Styles */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-    gap: 30px;
+/* Section Titles */
+h1, h2 {
+    color: #bb86fc; /* Purple for section headings */
+    font-size: 2.5em;
+    border-bottom: 2px solid #bb86fc;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
+/* Paragraph Styling */
+p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #e0e0e0;
+}
+
+/* List Styling */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+ul li::before {
+    /*content: "•"; /* Custom bullet point */
+    color: #bb86fc;
+    position: absolute;
+    left: 0;
+}
+
+.work-experience {
+    max-width: 1440px; /* Keep sections consistent */
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about {
+    font-size: 1.7em;
+}
+
+/* Center only buttons in the .about section */
+.about .button-container {
+    text-align: center; /* Center the button within the container */
+    margin-top: 20px; /* Add some spacing above the button */
+}
+
+.about .button {
+    padding: 15px 30px;
+    font-size: 1.8em;
+    color: white;
+    background-color: #6200ea;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block; /* Ensure the button behaves like an inline element */
+}
+
+.about .button:hover {
+    background-color: #3700b3;
+}
+
+/* Work Experience */
+.experience-item {
+    margin-bottom: 40px;
+}
+
+.experience-item h3 {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+    color: #bb86fc;
+}
+
+.experience-item p {
+    color: #ccc;
+    font-size: 1.1em;
+}
+
+/* Center the Gallery Section */
+.portfolio-highlights {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 100%; /* Allow full width usage */
+    margin: 0 auto;
+    font-size: 2.5em;
+}
+
+.gallery {
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: space-around; /* Evenly distribute items across the width */
+    align-items: stretch; /* Ensure items are of equal height */
+    gap: 20px; /* Space between the gallery items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Larger and more prominent gallery items */
 .gallery-item {
     background-color: #202020;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 30%; /* Flexible size: takes up 30% of container, allowing 3 items per row */
+    box-sizing: border-box; /* Include padding and borders in width calculation */
+    min-width: 300px; /* Minimum width to ensure cards don’t shrink too much */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Prominent shadow */
 }
 
 .gallery-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Scale effect on hover */
     background-color: #1e1e1e;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Darker shadow on hover */
 }
 
 .gallery-item img {
@@ -87,22 +275,52 @@ section {
 
 .gallery-item h3 {
     color: #bb86fc;
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin: 10px 0;
 }
 
 .gallery-item p {
     color: #ccc;
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 
-/* Footer styling */
-footer {
-    background-color: #1e1e1e;
+/* Buttons inside gallery items */
+.gallery-item .button {
+    background-color: #bb86fc;
+    padding: 15px 20px;
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.gallery-item .button:hover {
+    background-color: #d1a1fc;
+}
+
+/* Center the Resume Section */
+.resume-section {
+    display: flex;
+    flex-direction: column; /* Stack the text and button vertically */
+    align-items: center; /* Horizontally center the content */
     text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    color: #c1c1c1;
+    padding: 60px 20px;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+/* Increase font size for "Want to Know More?" heading */
+.resume-section h2 {
+    font-size: 2.5em; /* Adjust to make it larger */
+    margin-bottom: 10px;
+    color: #bb86fc; /* Keep purple accent */
+}
+
+/* Increase font size for the description text */
+.resume-section p {
+    font-size: 1.7em; /* Adjust to make the paragraph text larger */
+    margin-bottom: 20px;
+    color: #e0e0e0; /* Lighten the text color for readability */
 }
 
 /* Contact Form Styling */
@@ -120,289 +338,74 @@ label {
     display: block;
     margin: 15px 0 5px;
     font-weight: bold;
+    font-size: 2.3em;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
+
+.contact .button {
+    font-size: 5em;
 }
 
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #bb86fc;
+.contact .button {
+    padding: 15px 30px;
+    font-size: 1.8em;
+    color: white;
+    background-color: #6200ea;
     border: none;
-    color: white;
-    font-size: 16px;
     border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #d1a1fc;
-}
-
-/* About Page Styling */
-.about {
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.about h1 {
-    color: #bb86fc; /* Purple accent for heading */
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.about h2 {
-    color: #bb86fc;
-    font-size: 2em;
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
-
-.about p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #e0e0e0; /* Improve contrast */
-    margin-bottom: 20px;
-}
-
-.about ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.about ul li {
-    margin: 10px 0;
-    font-size: 1.1em;
-    color: #ccc;
-}
-
-.about ul li::before {
-    content: "•"; /* Adds bullet point to list */
-    color: #bb86fc; /* Purple accent for bullet points */
-    margin-right: 8px;
-    font-size: 1.5em;
-    vertical-align: middle;
-}
-
-/* Link styling */
-.about a.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #bb86fc;
-    color: white;
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.about a.button:hover {
-    background-color: #d1a1fc;
-}
-
-/* Work Experience Styling */
-.about h2 {
-    margin-top: 50px; /* Adds some space above each section */
-}
-
-.about ul li p {
-    color: #ccc; /* Color for text in list */
-    margin-bottom: 10px;
-}
-
-
-/* Portfolio Section */
-.portfolio {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.portfolio h1 {
-    color: #bb86fc;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-}
-
-/* Button Styling */
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #bb86fc;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
+    display: inline-block; /* Ensure the button behaves like an inline element */
 }
 
 .button:hover {
-    background-color: #d1a1fc;
+    background-color: #3700b3;
 }
 
-/* Center the About section and Work Experience */
-.about, .work-experience {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: 0 auto; /* Centers the content horizontally */
-    text-align: left; /* Aligns the text to the left for readability */
+.resume-button {
+    background-color: #4CAF50; /* Green for resume button */
 }
 
-/* Work Experience Specific Styling */
-.work-experience h2 {
-    color: #bb86fc;
-    font-size: 2em;
-    margin-bottom: 20px;
+.resume-button:hover {
+    background-color: #388E3C;
 }
 
-.experience-item {
-    margin-bottom: 30px; /* Space between work experience items */
-    padding-bottom: 20px;
-    border-bottom: 1px solid #333; /* Optional divider between items */
-}
-
-.experience-item h3 {
-    color: #bb86fc;
-    font-size: 1.5em;
-    margin-bottom: 5px;
-}
-
-.experience-item p {
-    color: #ccc;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-}
-
-.experience-item strong {
-    color: #ffffff; /* Highlight employer/university names */
-}
-
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: #1e1e1e;
-    color: #bb86fc;
-}
-
-.hero h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-.hero .button {
-    background-color: #bb86fc;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
+/* Add spacing between input fields */
+input, textarea {
+    resize: vertical; /* Allow only vertical resizing */
+    display: block;
+    width: 100%; /* Make the input fields full width */
+    padding: 10px;
+    margin-bottom: 20px; /* Adds space below each input field */
     border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
 }
 
-.hero .button:hover {
-    background-color: #d1a1fc;
-}
-
-/* Portfolio Highlights */
-.portfolio-highlights {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.portfolio-highlights h2 {
-    color: #bb86fc;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.gallery-item {
-    background-color: #202020;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.gallery-item img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.gallery-item h3 {
-    color: #bb86fc;
-    margin-bottom: 10px;
-}
-
-.gallery-item p {
-    color: #ccc;
-    margin-bottom: 10px;
-}
-
-.gallery-item .button {
-    background-color: #bb86fc;
-    padding: 8px 15px;
-    color: white;
-    text-decoration: none;
+/* Style for the Send Message button */
+.send-button {
+    padding: 15px 30px; /* Increase the padding for a larger button */
+    font-size: 1.8em; /* Make the text larger */
+    background-color: #6200ea; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
     border-radius: 5px;
-}
-
-.gallery-item .button:hover {
-    background-color: #d1a1fc;
-}
-
-/* Resume Section */
-.resume-section {
+    cursor: pointer; /* Show the pointer cursor when hovering over the button */
+    width: 100%; /* Optional: make the button full-width (adjust based on design) */
+    max-width: 250px; /* Set a max width if you want to limit its size */
     text-align: center;
-    padding: 60px 20px;
-    background-color: #1e1e1e;
-    color: white;
+    margin-top: 20px; /* Adds space above the button */
 }
 
-.resume-section h2 {
-    color: #bb86fc;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.resume-section .button {
-    background-color: #bb86fc;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-.resume-section .button:hover {
-    background-color: #d1a1fc;
+.send-button:hover {
+    background-color: #3700b3; /* Darker purple on hover */
 }
 
 /* Footer */
 footer {
+    background-color: #1e1e1e;
     text-align: center;
     padding: 20px;
-    background-color: #1e1e1e;
     color: #c1c1c1;
     margin-top: 40px;
+    font-size: 23px;
 }
