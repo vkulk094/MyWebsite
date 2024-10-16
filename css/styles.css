@@ -168,13 +168,6 @@ h1, h2 {
     text-align: center;
 }
 
-/* Paragraph Styling */
-p {
-    margin-bottom: 20px;
-    font-size: 1.1em;
-    color: #e0e0e0;
-}
-
 .work-experience {
     max-width: 1440px; /* Keep sections consistent */
     margin: 0 auto;
