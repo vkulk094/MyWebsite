@@ -79,20 +79,7 @@
     <footer>
         <p>© 2024 Vaibhav Kulkarni. All rights reserved.</p>
     </footer>
-    <!-- JavaScript to load the navigation -->
-    <script>
-        fetch('nav.html?cache-bust=' + new Date().getTime())  // Add cache busting
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not OK');
-                }
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById('nav-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navigation:', error));
-    </script>
-
+    <!-- JavaScript file to load the navbar -->
+    <script src="scripts/navbar.js"></script>
 </body>
 </html>
