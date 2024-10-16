@@ -78,7 +78,7 @@ nav ul li a:hover {
 }
 
 .hero h1 {
-    font-size: 64px;
+    font-size: 48px;
     margin-bottom: 20px;
 }
 
@@ -103,9 +103,6 @@ nav ul li a:hover {
     transition: background-color 0.3s ease;
 }
 
-.button:hover {
-    background-color: #3700b3; /* Default darker purple on hover */
-}
 
 /* Section-specific button overrides */
 .linkedin-button {
@@ -120,9 +117,6 @@ nav ul li a:hover {
     background-color: #4CAF50; /* Green for resume button */
 }
 
-.resume-button:hover {
-    background-color: #388E3C; /* Darker green on hover */
-}
 
 /* Gallery Button Styling */
 .gallery-item .button {
@@ -138,9 +132,10 @@ nav ul li a:hover {
 .hero .button-group {
     display: flex; /* Align buttons in a row */
     justify-content: center; /* Center the buttons horizontally */
-    gap: 20px; /* Space between buttons */
+    gap: 10px; /* Space between buttons */
     flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
     width: 100%; /* Make the button group take full width of the container */
+    flex-direction: column; /* Stack buttons vertically on mobile */
 }
 
 .hero .button-group .button {
@@ -161,7 +156,7 @@ section {
 /* Section Titles */
 h1, h2 {
     color: #bb86fc; /* Purple for section headings */
-    font-size: 2.5em;
+    font-size: 48px;
     border-bottom: 2px solid #bb86fc;
     padding-bottom: 10px;
     margin-bottom: 30px;
@@ -252,10 +247,8 @@ h1, h2 {
 }
 
 .gallery-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    width: 100%; /* Keep image responsive */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .gallery-item h3 {
@@ -296,7 +289,7 @@ h1, h2 {
 
 /* Increase font size for "Want to Know More?" heading */
 .resume-section h2 {
-    font-size: 2.5em; /* Adjust to make it larger */
+    font-size: 48px; /* Adjust to make it larger */
     margin-bottom: 10px;
     color: #bb86fc; /* Keep purple accent */
 }
@@ -342,20 +335,14 @@ label {
     display: inline-block; /* Ensure the button behaves like an inline element */
 }
 
-.button:hover {
-    background-color: #3700b3;
-}
 
 .resume-button {
     background-color: #4CAF50; /* Green for resume button */
 }
 
-.resume-button:hover {
-    background-color: #388E3C;
-}
 
 /* Add spacing between input fields */
-input, textarea {
+input:focus, textarea:focus {
     resize: vertical; /* Allow only vertical resizing */
     display: block;
     width: 100%; /* Make the input fields full width */
@@ -364,6 +351,9 @@ input, textarea {
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 1em;
+    outline: none;
+    border-color: #6200ea; /* Highlight on focus */
+    box-shadow: 0 0 5px rgba(98, 0, 234, 0.5); /* Add slight shadow */
 }
 
 /* Style for the Send Message button */
@@ -396,6 +386,13 @@ footer {
 }
 
 /* Blog Section Styling */
+
+@media only screen and (max-width: 600px) {
+    .blog-posts {
+        grid-template-columns: 1fr; /* Make posts stack vertically */
+    }
+}
+
 .blog-section {
     max-width: 900px;
     margin: 50px auto;
@@ -405,7 +402,7 @@ footer {
 .blog-section h2 {
     text-align: center;
     color: #bb86fc;
-    font-size: 2.5em;
+    font-size: 48px;
     margin-bottom: 40px;
 }
 
@@ -446,5 +443,22 @@ footer {
 }
 
 .blog-post .button:hover {
+    background-color: #3700b3;
+}
+
+@media only screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+    .hero .button-group .button {
+        font-size: 1.5em; /* Reduce button size on smaller screens */
+    }
+    .gallery {
+        flex-direction: column;
+    }
+}
+
+/* Combine similar button hover effects */
+.button:hover, .resume-button:hover, .linkedin-button:hover {
     background-color: #3700b3;
 }
