@@ -11,5 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('There was a problem with fetching the navbar:', error);
-        });
+            document.getElementById('nav-placeholder').innerHTML = '<p>Navigation is temporarily unavailable</p>';
+        });        
 });
