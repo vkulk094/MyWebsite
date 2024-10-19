@@ -156,8 +156,36 @@ header .navbar.animate {
     border-radius: 1rem !important;
     text-decoration: none !important;
     display: inline-block !important;
- }
- 
+    transition: all 0.3s ease !important;  /* Smooth transition for hover effects */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;  /* Initial shadow */
+    margin-top: 2rem !important;  /* Add space above the button */
+}
+
+#hero a.resume-btn:hover {
+    background-color: var(--secondary-color) !important;  /* Change background on hover */
+    color: white !important;  /* Ensure text is readable */
+    transform: scale(1.05) !important;  /* Slightly enlarge button */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2) !important;  /* More intense shadow on hover */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+#hero a.resume-btn {
+    animation: pulse 2s infinite !important;  /* Subtle pulsing animation */
+}
 
 #hero a.btn:focus {
     box-shadow: none;
@@ -194,8 +222,6 @@ header .navbar.animate {
 #hero .hero-content > a:hover::after, #hero .hero-content > a:focus::after, #hero .hero-content > a:active::after {
     width: 100%;
 }
-
-
 
 /* about me */
 #about h3 {
