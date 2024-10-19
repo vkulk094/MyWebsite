@@ -393,10 +393,6 @@ footer {
     margin-bottom: 40px;
 }
 
-.blog-section h3 p {
-    
-}
-
 .blog-posts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -417,10 +413,6 @@ footer {
 
 .blog-post h3 a:hover {
     text-decoration: underline;
-}
-
-.blog-post h2 {
-    
 }
 
 .blog-post p {
@@ -514,4 +506,107 @@ footer {
         font-size: 1.5em; /* Reduce button text size in hero section */
         padding: 10px 20px;
     }
+}
+
+/* Global Typography */
+h1 {
+    font-size: 2.5em; /* Standard size for h1 */
+    color: #bb86fc;   /* Keep purple accent */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;   /* Standard size for h2 */
+    color: #bb86fc;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.75em; /* Standard size for h3 */
+    color: #bb86fc;
+    margin-bottom: 10px;
+}
+
+p, li {
+    font-size: 1.2em; /* Standard size for paragraph text */
+    color: #e0e0e0;   /* Consistent text color */
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Global Button Styling */
+.button {
+    display: inline-block;
+    padding: 15px 30px; /* Consistent padding */
+    font-size: 1.5em;   /* Standard font size */
+    color: white;
+    background-color: #6200ea; /* Default button color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin: 20px 0;    /* Consistent margin */
+}
+
+.button:hover {
+    background-color: #3700b3; /* Hover color */
+}
+
+/* Global Section Styling */
+section {
+    max-width: 1440px;
+    margin: 40px auto;   /* Standard margin */
+    padding: 20px;       /* Consistent padding */
+}
+
+section h1, section h2 {
+    margin-bottom: 30px; /* Consistent spacing for headings in sections */
+}
+
+/* Responsive Image Styles */
+img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto;
+}
+
+/* Responsive Flexbox Layout for Galleries */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Global Navigation Styling */
+nav {
+    background-color: #1e1e1e;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em; /* Standard font size */
+    padding: 10px 15px;
+}
+
+nav ul li a:hover {
+    background-color: #6200ea;
+    border-radius: 5px;
 }
