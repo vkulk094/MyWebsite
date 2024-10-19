@@ -163,23 +163,23 @@ h1, h2 {
     text-align: center;
 }
 
-.work-experience {
+section {
     max-width: 1440px; /* Keep sections consistent */
     margin: 0 auto;
     text-align: left;
 }
 
-.about {
+section {
     font-size: 1.7em;
 }
 
-/* Center only buttons in the .about section */
-.about .button-container {
+/* Center only buttons in the section section */
+section .button-container {
     text-align: center; /* Center the button within the container */
     margin-top: 20px; /* Add some spacing above the button */
 }
 
-.about .button {
+section .button {
     padding: 15px 30px;
     
     color: white;
@@ -190,7 +190,7 @@ h1, h2 {
     display: inline-block; /* Ensure the button behaves like an inline element */
 }
 
-.about .button:hover {
+section .button:hover {
     background-color: #3700b3;
 }
 
@@ -211,7 +211,7 @@ h1, h2 {
 }
 
 /* Center the Gallery Section */
-.portfolio-highlights {
+section {
     text-align: center;
     padding: 60px 20px;
     max-width: 100%; /* Allow full width usage */
@@ -277,7 +277,7 @@ h1, h2 {
 }
 
 /* Center the Resume Section */
-.resume-section {
+section {
     display: flex;
     flex-direction: column; /* Stack the text and button vertically */
     align-items: center; /* Horizontally center the content */
@@ -288,14 +288,14 @@ h1, h2 {
 }
 
 /* Increase font size for "Want to Know More?" heading */
-.resume-section h2 {
+section h2 {
      /* Adjust to make it larger */
     margin-bottom: 10px;
     color: #bb86fc; /* Keep purple accent */
 }
 
 /* Increase font size for the description text */
-.resume-section p {
+section p {
     font-size: 1.7em; /* Adjust to make the paragraph text larger */
     margin-bottom: 20px;
     color: #e0e0e0; /* Lighten the text color for readability */
@@ -379,18 +379,22 @@ footer {
     }
 }
 
-.blog-section {
+section {
     max-width: 1080px;
     margin: 50px auto;
     padding: 0 20px;
 }
 
-.blog-section h2 {
+section h2 {
     list-style: none;
     text-align: center;
     color: #bb86fc;
     
     margin-bottom: 40px;
+}
+
+section h3 p {
+    
 }
 
 .blog-posts {
@@ -413,6 +417,10 @@ footer {
 
 .blog-post h3 a:hover {
     text-decoration: underline;
+}
+
+.blog-post h2 {
+    
 }
 
 .blog-post p {
