@@ -157,29 +157,30 @@ header .navbar.animate {
     text-decoration: none !important;
     display: inline-block !important;
     transition: all 0.3s ease !important;  /* Smooth transition for hover effects */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;  /* Initial shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;  /* Initial shadow */
     margin-top: 2rem !important;  /* Add space above the button */
+    margin-right: 1rem !important; /* Add spaces to the right */ 
 }
 
 #hero a.resume-btn:hover {
-    background-color: var(--secondary-color) !important;  /* Change background on hover */
+    background-color: #ff6347 !important;  /* Change background on hover */
     color: white !important;  /* Ensure text is readable */
-    transform: scale(1.05) !important;  /* Slightly enlarge button */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2) !important;  /* More intense shadow on hover */
+    transform: scale(1.1) !important;  /* Slightly enlarge button */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;  /* More intense shadow on hover */
 }
 
 @keyframes pulse {
     0% {
         transform: scale(1);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
     50% {
-        transform: scale(1.05);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
     100% {
         transform: scale(1);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 }
 
