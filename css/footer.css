@@ -41,6 +41,10 @@ footer .card-footer a {
     background-color: var(--background-color) !important;
 }
 
+a.float-end.btn.btn-outline-info.btn-sm {
+    font-size: 1.3rem !important;           /* Increase font size */
+}
+
 footer .card-footer a:hover {
     color: var(--primary-color) !important;
     opacity: 0.8;
@@ -61,4 +65,8 @@ footer .card > .card-header .card-img-top {
     height: 250px !important;
     object-fit: cover;
     background-color: transparent !important;
+}
+
+.col-md-4.text-center {
+    width: 40% !important; /* Make the copyright fit in one line */
 }
