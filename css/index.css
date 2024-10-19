@@ -150,10 +150,11 @@ header .navbar.animate {
 
 #hero a.btn {
     margin-top: 50px;
-    padding: 0.7rem 1.75rem;
-    border: 1px solid var(--primary-color);
+    padding: 1rem 2.5rem; /* Increase padding to make the button larger */
+    font-size: 1.2rem; /* Increase the font size */
+    border: 2px solid var(--primary-color); /* Optionally increase the border thickness */
     color: var(--text-color) !important;
-    border-radius: .75rem;
+    border-radius: 1rem; /* Increase border radius for a more rounded button */
     transition: none;
 }
 
