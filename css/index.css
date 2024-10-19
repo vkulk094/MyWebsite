@@ -149,7 +149,7 @@ header .navbar.animate {
 }
 
 #hero a.resume-btn {
-    font-size: 2rem !important;
+    font-size: 3rem !important;
     padding: 1.5rem 3rem !important;
     background-color: var(--primary-color) !important;
     color: var(--text-color) !important;
