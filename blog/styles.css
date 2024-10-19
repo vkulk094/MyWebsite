@@ -309,41 +309,19 @@ h1, h2 {
 
 form {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto; /* Center the form on the page */
 }
 
 label {
     display: block;
     margin: 15px 0 5px;
     font-weight: bold;
-    font-size: 2.3em;
+    font-size: 1.2em; /* Reduced to improve readability */
+    color: #fff; /* Optional: match the theme color if needed */
 }
 
-
-.contact .button {
-    font-size: 5em;
-}
-
-.contact .button {
-    padding: 8px 20px;
-    font-size: 1.4em;
-    color: white;
-    background-color: #6200ea;
-    border: none;
-    border-radius: 12px;
-    text-decoration: none;
-    display: inline-block; /* Ensure the button behaves like an inline element */
-}
-
-
-.resume-button {
-    background-color: #4CAF50; /* Green for resume button */
-}
-
-
-/* Add spacing between input fields */
-input:focus, textarea:focus {
-    resize: vertical; /* Allow only vertical resizing */
+/* Input and Textarea Styles */
+input[type="text"], input[type="email"], textarea {
     display: block;
     width: 100%; /* Make the input fields full width */
     padding: 10px;
@@ -352,27 +330,35 @@ input:focus, textarea:focus {
     border: 1px solid #ccc;
     font-size: 1em;
     outline: none;
-    border-color: #6200ea; /* Highlight on focus */
-    box-shadow: 0 0 5px rgba(98, 0, 234, 0.5); /* Add slight shadow */
+    border-color: #6200ea; /* Purple color for border on focus */
+    box-shadow: 0 0 5px rgba(98, 0, 234, 0.5); /* Slight shadow on focus */
 }
 
-/* Style for the Send Message button */
+input:focus, textarea:focus {
+    border-color: #6200ea; /* Border color on focus */
+    box-shadow: 0 0 5px rgba(98, 0, 234, 0.5); /* Shadow on focus */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Styling for the Send Button */
 .send-button {
-    padding: 15px 30px; /* Increase the padding for a larger button */
-    font-size: 1.8em; /* Make the text larger */
-    background-color: #6200ea; /* Button background color */
-    color: white; /* Button text color */
+    padding: 15px 30px;
+    font-size: 1.5em;
+    background-color: #6200ea;
+    color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer; /* Show the pointer cursor when hovering over the button */
-    width: 100%; /* Optional: make the button full-width (adjust based on design) */
-    max-width: 250px; /* Set a max width if you want to limit its size */
+    cursor: pointer;
+    width: 100%; /* Full width button */
+    max-width: 200px; /* Optional max width to limit button size */
     text-align: center;
-    margin-top: 20px; /* Adds space above the button */
+    margin: 20px auto 0 auto; /* Adds space above and centers the button */
+    display: block; /* Center the button */
 }
 
 .send-button:hover {
     background-color: #3700b3; /* Darker purple on hover */
+    transition: background-color 0.3s ease;
 }
 
 /* Footer */
@@ -394,12 +380,13 @@ footer {
 }
 
 .blog-section {
-    max-width: 900px;
+    max-width: 1080px;
     margin: 50px auto;
     padding: 0 20px;
 }
 
 .blog-section h2 {
+    list-style: none;
     text-align: center;
     color: #bb86fc;
     font-size: 48px;
@@ -446,19 +433,33 @@ footer {
     background-color: #3700b3;
 }
 
-@media only screen and (max-width: 768px) {
-    .hero h1 {
-        font-size: 36px;
-    }
-    .hero .button-group .button {
-        font-size: 1.5em; /* Reduce button size on smaller screens */
-    }
-    .gallery {
-        flex-direction: column;
-    }
-}
-
 /* Combine similar button hover effects */
 .button:hover, .resume-button:hover, .linkedin-button:hover {
     background-color: #3700b3;
+}
+/* Short bio section styling */
+.short-bio {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #202020;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.short-bio h2 {
+    font-size: 2.5em;
+    color: #bb86fc;
+    margin-bottom: 10px;
+}
+
+.short-bio p {
+    font-size: 1.5em;
+    color: #ccc;
+}
+
+/* Enhanced gallery item hover effects */
+.gallery-item:hover {
+    transform: scale(1.08);
+    background-color: #2a2a2a;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
 }
