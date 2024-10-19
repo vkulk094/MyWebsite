@@ -471,6 +471,7 @@ header .navbar.animate {
     display: inline-block;
     text-decoration: none;
     color: var(--text-link-color) !important;
+    font-size: 2.1rem !important;
 }
 
 #education .card .card-body > a h6::after {
