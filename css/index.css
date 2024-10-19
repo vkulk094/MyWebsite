@@ -150,12 +150,14 @@ header .navbar.animate {
 
 #hero a.resume-btn {
     margin-top: 50px;
-    padding: 1rem 2.5rem; /* Increase padding to make the button larger */
-    font-size: 2.5rem; /* Increase the font size */
-    border: 2px solid var(--primary-color); /* Optionally increase the border thickness */
+    padding: 2rem 4rem; /* Increase padding significantly */
+    font-size: 2rem; /* Increase font size */
+    border: 2px solid var(--primary-color);
     color: var(--text-color) !important;
-    border-radius: 1rem; /* Increase border radius for a more rounded button */
+    border-radius: 1rem;
+    background-color: var(--primary-color); /* Add background color if necessary */
     transition: none;
+    display: inline-block; /* Ensure it displays as a block */
 }
 
 #hero a.btn:focus {
