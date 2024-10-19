@@ -149,16 +149,15 @@ header .navbar.animate {
 }
 
 #hero a.resume-btn {
-    margin-top: 50px;
-    padding: 2rem 4rem; /* Increase padding significantly */
-    font-size: 4rem !important; /* Increase font size */
-    border: 2px solid var(--primary-color);
+    font-size: 2rem !important;
+    padding: 1.5rem 3rem !important;
+    background-color: var(--primary-color) !important;
     color: var(--text-color) !important;
-    border-radius: 1rem;
-    background-color: var(--primary-color); /* Add background color if necessary */
-    transition: none;
-    display: inline-block; /* Ensure it displays as a block */
-}
+    border-radius: 1rem !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+ }
+ 
 
 #hero a.btn:focus {
     box-shadow: none;
