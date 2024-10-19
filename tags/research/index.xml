@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research on Vaibhav&#39;s Personal Website</title>
+    <link>https://vaibhavkulkarni.bio/tags/research/</link>
+    <description>Recent content in Research on Vaibhav&#39;s Personal Website</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://vaibhavkulkarni.bio/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What I Learned from Presenting at the Ottawa Biology Symposium</title>
+      <link>https://vaibhavkulkarni.bio/blogs/ocib/</link>
+      <pubDate>Mon, 05 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://vaibhavkulkarni.bio/blogs/ocib/</guid>
+      <description>&lt;p&gt;Presenting at the &lt;strong&gt;Ottawa Biology Symposium 2024&lt;/strong&gt; was one of the most rewarding and enlightening experiences in my academic journey. The symposium gathered experts and students from various biological fields, giving me the opportunity to showcase my research on histone modifications in goldfish under hypoxic conditions.&lt;/p&gt;&#xA;&lt;h2 id=&#34;preparation-balancing-research-and-presentation&#34;&gt;Preparation: Balancing Research and Presentation&lt;/h2&gt;&#xA;&lt;p&gt;As the symposium date approached, I spent weeks balancing the completion of my research with preparing my presentation. The challenge was not only in summarizing months of research into a concise presentation but also in ensuring that the technical aspects of my project were accessible to a broader audience.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Expanding Role of Bioinformatics in Modern Science</title>
+      <link>https://vaibhavkulkarni.bio/blogs/bioinformatics-role/</link>
+      <pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://vaibhavkulkarni.bio/blogs/bioinformatics-role/</guid>
+      <description>&lt;p&gt;Bioinformatics sits at the crossroads of biology, computer science, and data analysis, transforming how we understand and apply biological information. Initially propelled by the Human Genome Project, bioinformatics has expanded beyond genomics into fields like proteomics, systems biology, and drug discovery, revolutionizing both research and medicine.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-foundation-of-bioinformatics&#34;&gt;The Foundation of Bioinformatics&lt;/h2&gt;&#xA;&lt;p&gt;Bioinformatics involves the development of computational tools and techniques for understanding biological data. Genomic data analysis, for example, relies on algorithms to identify gene sequences, predict functions, and assess genetic variations that influence disease susceptibility. Beyond genomics, bioinformatics now plays a crucial role in analyzing proteins (proteomics), understanding metabolic pathways, and modeling complex cellular networks.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

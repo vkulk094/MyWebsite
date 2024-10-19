@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloudflare on Vaibhav&#39;s Personal Website</title>
+    <link>https://vaibhavkulkarni.bio/tags/cloudflare/</link>
+    <description>Recent content in Cloudflare on Vaibhav&#39;s Personal Website</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://vaibhavkulkarni.bio/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Built My Personal Website Using GitHub Pages and Cloudflare</title>
+      <link>https://vaibhavkulkarni.bio/blogs/website/</link>
+      <pubDate>Wed, 16 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://vaibhavkulkarni.bio/blogs/website/</guid>
+      <description>&lt;p&gt;Building my personal website was both a rewarding and educational experience. It taught me the fundamentals of hosting, web performance, DNS management, and security, while also allowing me to create a platform to showcase my work. Using &lt;strong&gt;GitHub Pages&lt;/strong&gt; for free and &lt;strong&gt;Cloudflare&lt;/strong&gt; for performance optimization and security, I successfully launched a professional online presence with minimal cost. In this post, I’ll walk through how I set up the site, the tools I used, and the lessons I learned along the way.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

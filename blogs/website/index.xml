@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>How I Built My Personal Website Using GitHub Pages and Cloudflare on Vaibhav&#39;s Personal Website</title>
+    <link>https://vaibhavkulkarni.bio/blogs/website/</link>
+    <description>Recent content in How I Built My Personal Website Using GitHub Pages and Cloudflare on Vaibhav&#39;s Personal Website</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://vaibhavkulkarni.bio/blogs/website/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
