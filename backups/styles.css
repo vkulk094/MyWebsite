@@ -437,29 +437,3 @@ footer {
 .button:hover, .resume-button:hover, .linkedin-button:hover {
     background-color: #3700b3;
 }
-/* Short bio section styling */
-.short-bio {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #202020;
-    color: white;
-    margin-bottom: 20px;
-}
-
-.short-bio h2 {
-    font-size: 2.5em;
-    color: #bb86fc;
-    margin-bottom: 10px;
-}
-
-.short-bio p {
-    font-size: 1.5em;
-    color: #ccc;
-}
-
-/* Enhanced gallery item hover effects */
-.gallery-item:hover {
-    transform: scale(1.08);
-    background-color: #2a2a2a;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
-}
