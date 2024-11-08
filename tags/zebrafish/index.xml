@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zebrafish on Vaibhav&#39;s Personal Website</title>
+    <link>https://vaibhavkulkarni.bio/tags/zebrafish/</link>
+    <description>Recent content in Zebrafish on Vaibhav&#39;s Personal Website</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://vaibhavkulkarni.bio/tags/zebrafish/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring Flexible Locomotor Behavior with Dr. Minoru Koyama</title>
+      <link>https://vaibhavkulkarni.bio/blogs/seminar-koyama/</link>
+      <pubDate>Thu, 07 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://vaibhavkulkarni.bio/blogs/seminar-koyama/</guid>
+      <description>&lt;p&gt;On &lt;strong&gt;November 7, 2024&lt;/strong&gt;, &lt;strong&gt;Dr. Minoru Koyama&lt;/strong&gt; from the University of Toronto presented a seminar exploring the neuronal mechanisms underlying flexible locomotor behavior. His talk provided insights into how neural circuits develop and adapt to control movement-related behaviors in animals, with a focus on zebrafish as a model organism.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-takeaways-from-the-seminar&#34;&gt;Key Takeaways from the Seminar&lt;/h2&gt;&#xA;&lt;h3 id=&#34;from-simple-to-complex-neural-networks&#34;&gt;From Simple to Complex Neural Networks&lt;/h3&gt;&#xA;&lt;p&gt;Dr. Koyama highlighted that as neural connections develop, they lead to increasingly complex behaviors. He aims to understand how neural circuits form and function across species. Notably, he observed that puppies and adult dogs exhibit different behaviors due to developmental changes in their neural circuits, suggesting some conserved mechanisms across vertebrates. To study these mechanisms, Dr. Koyama uses transparent zebrafish, which allow real-time visualization of nerve cell activity.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
