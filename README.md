@@ -119,12 +119,3 @@ Add a license if you plan to accept contributions or reuse parts elsewhere (MIT 
 
 Vaibhav Kulkarni
 
-* Repo issues: open an issue in this repository
-
-```
-
-If you want, paste your current `config.yaml` (and the name of the theme folder under `themes/`) and I will tighten the README so the install and deployment sections match your exact setup.
-::contentReference[oaicite:11]{index=11}
-```
-
-[1]: https://github.com/vkulk094/MyWebsite "GitHub - vkulk094/MyWebsite: Github Website Tutorial"
