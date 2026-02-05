@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice to Claude Prompt Converter | Vaibhav Kulkarni</title>
+    <meta name="description" content="Transform casual voice input into structured, effective Claude prompts. A tool by Vaibhav Kulkarni.">
+    <link rel="icon" href="/images/dna.png" type="image/gif">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 14px;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+        
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        #voiceInput {
+            min-height: 120px;
+        }
+        
+        #optimizedPrompt {
+            min-height: 300px;
+            background-color: #f8f9fa;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .copy-btn {
+            background: #48bb78;
+            margin-left: auto;
+        }
+        
+        .copy-btn:hover {
+            box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+        }
+        
+        .example {
+            background: #f0f4ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #555;
+        }
+        
+        .example strong {
+            color: #667eea;
+        }
+        
+        .footer-credit {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 13px;
+            border-top: 1px solid #eee;
+        }
+        
+        .footer-credit a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .footer-credit a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div style="max-width: 900px; margin: 0 auto;">
+        <a href="/" class="back-link">← Back to vaibhavkulkarni.bio</a>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Voice to Claude Prompt Converter</h1>
+            <p>Transform casual voice input into structured, effective Claude prompts</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <label for="voiceInput">Your Voice Input (paste transcription here):</label>
+                <textarea id="voiceInput" placeholder="Just speak naturally! Example: um I need like a presentation or something, maybe 10 slides? About sales performance for the quarterly meeting you know with the team..."></textarea>
+                <div class="example">
+                    <strong>Tip:</strong> Don't worry about perfect grammar or complete sentences. The tool handles filler words ("um", "like", "you know"), false starts, repeated words, and fragmented thoughts. Just paste what you actually said.
+                </div>
+                <div class="example" style="margin-top: 10px; background: #fff3cd; border-left: 4px solid #ffc107;">
+                    <strong>Examples of messy input this handles:</strong><br>
+                    • "uh I need an email to send to the client about um the delay, make it professional I guess"<br>
+                    • "presentation like 10 slides quarterly sales meeting you know performance targets"<br>
+                    • "help me write write a blog post, maybe 800 words, about cybersecurity for small business"
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button onclick="optimizePrompt()">Generate Optimized Prompt</button>
+            </div>
+            
+            <div id="detectionResults" style="display: none; margin-top: 20px;">
+                <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; border-left: 4px solid #4caf50;">
+                    <div style="font-weight: 600; margin-bottom: 10px; color: #2e7d32;">✓ Detected from your input:</div>
+                    <div id="detectedInfo" style="font-size: 13px; color: #555;"></div>
+                </div>
+            </div>
+            
+            <div class="section" style="margin-top: 30px;">
+                <label for="optimizedPrompt">Optimized Claude Prompt:</label>
+                <textarea id="optimizedPrompt" placeholder="Your optimized prompt will appear here..." readonly></textarea>
+                <div class="button-group">
+                    <button class="copy-btn" onclick="copyPrompt()">Copy to Clipboard</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-credit">
+            Created by <a href="https://vaibhavkulkarni.bio">Vaibhav Kulkarni</a> | 
+            <a href="https://github.com/vkulk094">GitHub</a>
+        </div>
+    </div>
+
+    <script>
+        function optimizePrompt() {
+            const rawInput = document.getElementById('voiceInput').value.trim();
+            
+            if (!rawInput) {
+                alert('Please enter your voice input first.');
+                return;
+            }
+            
+            // First, clean and normalize the messy voice input
+            const cleanedInput = cleanVoiceInput(rawInput);
+            
+            // Analyze the cleaned input to determine task type and extract key elements
+            const analysis = analyzeInput(cleanedInput, rawInput);
+            
+            // Display what was detected
+            displayDetectionResults(analysis);
+            
+            // Generate optimized prompt based on analysis
+            const optimized = generateOptimizedPrompt(cleanedInput, analysis);
+            
+            document.getElementById('optimizedPrompt').value = optimized;
+        }
+        
+        function displayDetectionResults(analysis) {
+            const { taskType, confidence, numbers, audience, tone, topics, deadline, constraints, purpose } = analysis;
+            
+            let html = `<strong>Task type:</strong> ${taskType}<br>`;
+            
+            if (audience) {
+                html += `<strong>Audience:</strong> ${audience}<br>`;
+            }
+            
+            if (tone) {
+                html += `<strong>Tone:</strong> ${tone}<br>`;
+            }
+            
+            if (purpose) {
+                html += `<strong>Purpose:</strong> ${purpose}<br>`;
+            }
+            
+            if (topics && topics.length > 0) {
+                html += `<strong>Topics:</strong> ${topics.join(', ')}<br>`;
+            }
+            
+            if (Object.keys(numbers).length > 1) {
+                html += `<strong>Numbers found:</strong> `;
+                const numberDetails = [];
+                if (numbers.slides) numberDetails.push(`${numbers.slides} slides`);
+                if (numbers.words) numberDetails.push(`${numbers.words} words`);
+                if (numbers.items) numberDetails.push(`${numbers.items} items`);
+                if (numbers.duration) numberDetails.push(`${numbers.duration} min duration`);
+                html += numberDetails.join(', ') + '<br>';
+            }
+            
+            if (deadline) {
+                html += `<strong>Timeline:</strong> ${deadline}<br>`;
+            }
+            
+            if (constraints && constraints.length > 0) {
+                html += `<strong>Constraints:</strong> ${constraints.join('; ')}<br>`;
+            }
+            
+            document.getElementById('detectedInfo').innerHTML = html;
+            document.getElementById('detectionResults').style.display = 'block';
+        }
+        
+        function cleanVoiceInput(input) {
+            let cleaned = input;
+            
+            // Remove common filler words and speech disfluencies
+            const fillers = [
+                /\b(um|uh|umm|uhh|hmm|like|you know|I mean|sort of|kind of|actually|basically|literally)\b/gi,
+                /\b(so yeah|yeah so|and yeah|well|okay|ok|alright|let me see|let's see)\b/gi,
+                /\b(I guess|I think maybe|probably|perhaps)\b/gi
+            ];
+            
+            fillers.forEach(pattern => {
+                cleaned = cleaned.replace(pattern, ' ');
+            });
+            
+            // Remove repeated words (e.g., "I I need" -> "I need")
+            cleaned = cleaned.replace(/\b(\w+)\s+\1\b/gi, '$1');
+            
+            // Remove false starts (words followed by comma and restart)
+            cleaned = cleaned.replace(/\b\w+,\s+/g, '');
+            
+            // Clean up multiple spaces
+            cleaned = cleaned.replace(/\s+/g, ' ');
+            
+            // Fix common transcription issues
+            cleaned = cleaned.replace(/\bwanna\b/gi, 'want to');
+            cleaned = cleaned.replace(/\bgonna\b/gi, 'going to');
+            cleaned = cleaned.replace(/\bgotta\b/gi, 'got to');
+            
+            return cleaned.trim();
+        }
+        
+        function analyzeInput(cleanedInput, originalInput) {
+            const lower = cleanedInput.toLowerCase();
+            const original = originalInput.toLowerCase();
+            
+            // Detect task type with more flexible patterns
+            let taskType = 'general';
+            let confidence = 0;
+            
+            // Presentation detection
+            if (lower.match(/\b(presentation|slide|deck|powerpoint|ppt)\b/) || 
+                lower.match(/\b(present|presenting)\b.*\b(to|for)\b/)) {
+                taskType = 'presentation';
+                confidence = 0.9;
+            }
+            // Email detection
+            else if (lower.match(/\b(email|e-mail|message|mail|letter|write to)\b/) ||
+                     lower.match(/\b(send|sending)\b.*\b(to|message)\b/)) {
+                taskType = 'email';
+                confidence = 0.9;
+            }
+            // Analysis/Summary detection
+            else if (lower.match(/\b(summar|analyze|analysis|review|look at|check|examine)\b/) ||
+                     lower.match(/\b(what does|tell me about|explain)\b.*\b(this|the|that)\b/)) {
+                taskType = 'analysis';
+                confidence = 0.8;
+            }
+            // Content creation detection
+            else if (lower.match(/\b(write|create|draft|compose|blog|article|post|content)\b/) ||
+                     lower.match(/\b(need|want)\b.*\b(written|wrote|writing)\b/)) {
+                taskType = 'content';
+                confidence = 0.8;
+            }
+            // Brainstorming detection
+            else if (lower.match(/\b(brainstorm|ideas|suggest|think of|come up with|possibilities)\b/) ||
+                     lower.match(/\b(what are|give me)\b.*\b(ideas|options|ways)\b/)) {
+                taskType = 'brainstorm';
+                confidence = 0.8;
+            }
+            // Data/spreadsheet detection
+            else if (lower.match(/\b(data|spreadsheet|excel|chart|graph|table|csv)\b/) ||
+                     lower.match(/\b(calculate|compute|numbers)\b/)) {
+                taskType = 'data';
+                confidence = 0.7;
+            }
+            
+            // Extract numbers more intelligently
+            const numbers = extractNumbers(cleanedInput);
+            
+            // Extract audience with more patterns
+            const audience = extractAudience(cleanedInput);
+            
+            // Extract tone with more nuance
+            const tone = extractTone(cleanedInput);
+            
+            // Extract key topics and entities
+            const topics = extractTopics(cleanedInput);
+            
+            // Extract time/deadline information
+            const deadline = extractDeadline(cleanedInput);
+            
+            // Extract constraints or requirements
+            const constraints = extractConstraints(cleanedInput);
+            
+            // Try to identify the main goal/purpose
+            const purpose = extractPurpose(cleanedInput);
+            
+            return { 
+                taskType, 
+                confidence,
+                numbers, 
+                audience, 
+                tone, 
+                topics,
+                deadline,
+                constraints,
+                purpose,
+                cleanedInput
+            };
+        }
+        
+        function extractNumbers(input) {
+            const numbers = {};
+            
+            // Look for slide counts
+            const slideMatch = input.match(/(\d+)\s*(slide|page)/i);
+            if (slideMatch) numbers.slides = parseInt(slideMatch[1]);
+            
+            // Look for word counts
+            const wordMatch = input.match(/(\d+)\s*(word|words)/i);
+            if (wordMatch) numbers.words = parseInt(wordMatch[1]);
+            
+            // Look for time durations
+            const timeMatch = input.match(/(\d+)\s*(minute|min|hour|hr)/i);
+            if (timeMatch) numbers.duration = parseInt(timeMatch[1]);
+            
+            // Look for item counts (top 5, 3 ideas, etc.)
+            const itemMatch = input.match(/(\d+)\s*(item|idea|point|option|way)/i);
+            if (itemMatch) numbers.items = parseInt(itemMatch[1]);
+            
+            // Fallback: just get all numbers
+            const allNumbers = input.match(/\d+/g) || [];
+            numbers.all = allNumbers.map(n => parseInt(n));
+            
+            return numbers;
+        }
+        
+        function extractAudience(input) {
+            const lower = input.toLowerCase();
+            
+            // Direct audience mentions
+            if (lower.match(/\b(for|to|audience|presenting to|sending to)\b.*\b(client|customer)/i)) 
+                return 'clients or customers';
+            if (lower.match(/\b(team|staff|colleague|employee|coworker)/i)) 
+                return 'internal team members';
+            if (lower.match(/\b(board|executive|c-suite|management|leadership|director|ceo|cfo)/i)) 
+                return 'executives or leadership';
+            if (lower.match(/\b(student|beginner|new|novice|learning)/i)) 
+                return 'beginners or learners';
+            if (lower.match(/\b(expert|professional|specialist|advanced)/i)) 
+                return 'experts or professionals';
+            if (lower.match(/\b(investor|stakeholder|shareholder)/i)) 
+                return 'investors or stakeholders';
+            if (lower.match(/\b(general public|everyone|anyone|people)/i)) 
+                return 'general audience';
+            
+            return null;
+        }
+        
+        function extractTone(input) {
+            const lower = input.toLowerCase();
+            
+            // Explicit tone mentions
+            if (lower.match(/\b(professional|formal|business)\b/)) 
+                return 'professional and formal';
+            if (lower.match(/\b(casual|friendly|informal|relaxed|conversational)\b/)) 
+                return 'casual and friendly';
+            if (lower.match(/\b(persuasive|convincing|compelling)\b/)) 
+                return 'persuasive';
+            if (lower.match(/\b(urgent|important|critical|asap)\b/)) 
+                return 'urgent and direct';
+            if (lower.match(/\b(fun|playful|humorous|entertaining)\b/)) 
+                return 'engaging and entertaining';
+            if (lower.match(/\b(technical|detailed|in-depth)\b/)) 
+                return 'technical and detailed';
+            if (lower.match(/\b(simple|easy|straightforward|clear)\b/)) 
+                return 'simple and clear';
+            
+            return null;
+        }
+        
+        function extractTopics(input) {
+            const topics = [];
+            
+            // Look for "about X", "on X", "regarding X"
+            const aboutMatch = input.match(/\b(about|on|regarding|concerning)\s+([a-z]+(?:\s+[a-z]+){0,3})/gi);
+            if (aboutMatch) {
+                aboutMatch.forEach(match => {
+                    const topic = match.replace(/^(about|on|regarding|concerning)\s+/i, '').trim();
+                    topics.push(topic);
+                });
+            }
+            
+            // Look for "for X", "to X" (project names, purposes)
+            const forMatch = input.match(/\b(for|to)\s+(the|our|my)?\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,2})/g);
+            if (forMatch) {
+                forMatch.forEach(match => {
+                    const topic = match.replace(/^(for|to)\s+(the|our|my)?\s*/i, '').trim();
+                    if (topic.length > 2) topics.push(topic);
+                });
+            }
+            
+            return [...new Set(topics)]; // Remove duplicates
+        }
+        
+        function extractDeadline(input) {
+            const lower = input.toLowerCase();
+            
+            if (lower.match(/\b(today|asap|urgent|now|immediately)\b/)) 
+                return 'urgent (today)';
+            if (lower.match(/\b(tomorrow|by tomorrow)\b/)) 
+                return 'tomorrow';
+            if (lower.match(/\b(this week|end of week|by friday)\b/)) 
+                return 'this week';
+            if (lower.match(/\b(next week)\b/)) 
+                return 'next week';
+            if (lower.match(/\b(this month|end of month)\b/)) 
+                return 'this month';
+            
+            return null;
+        }
+        
+        function extractConstraints(input) {
+            const constraints = [];
+            const lower = input.toLowerCase();
+            
+            // Length constraints
+            if (lower.match(/\b(short|brief|quick|concise)\b/)) 
+                constraints.push('Keep it concise and brief');
+            if (lower.match(/\b(long|detailed|comprehensive|thorough)\b/)) 
+                constraints.push('Provide detailed, comprehensive coverage');
+            
+            // Format constraints
+            if (lower.match(/\b(bullet|list|points)\b/)) 
+                constraints.push('Use bullet points or lists');
+            if (lower.match(/\b(paragraph|prose|narrative)\b/)) 
+                constraints.push('Write in paragraph/prose format');
+            
+            // Style constraints
+            if (lower.match(/\b(simple|easy to understand|layman)\b/)) 
+                constraints.push('Use simple, accessible language');
+            if (lower.match(/\b(no jargon|avoid technical)\b/)) 
+                constraints.push('Avoid technical jargon');
+            
+            return constraints;
+        }
+        
+        function extractPurpose(input) {
+            const lower = input.toLowerCase();
+            
+            // Try to find purpose statements
+            const purposePatterns = [
+                /\b(need|want|looking|trying)\s+to\s+([^.,]+)/i,
+                /\b(goal|purpose|aim)\s+is\s+to\s+([^.,]+)/i,
+                /\b(help|assist)\s+(me\s+)?(with|to)\s+([^.,]+)/i
+            ];
+            
+            for (const pattern of purposePatterns) {
+                const match = input.match(pattern);
+                if (match) {
+                    return match[match.length - 1].trim();
+                }
+            }
+            
+            return null;
+        }
+        
+        function generateOptimizedPrompt(cleanedInput, analysis) {
+            const { taskType, numbers, audience, tone, topics, deadline, constraints, purpose } = analysis;
+            
+            let prompt = '';
+            
+            // Task-specific templates with enhanced context
+            switch (taskType) {
+                case 'presentation':
+                    prompt = generatePresentationPrompt(cleanedInput, analysis);
+                    break;
+                case 'email':
+                    prompt = generateEmailPrompt(cleanedInput, analysis);
+                    break;
+                case 'analysis':
+                    prompt = generateAnalysisPrompt(cleanedInput, analysis);
+                    break;
+                case 'content':
+                    prompt = generateContentPrompt(cleanedInput, analysis);
+                    break;
+                case 'brainstorm':
+                    prompt = generateBrainstormPrompt(cleanedInput, analysis);
+                    break;
+                case 'data':
+                    prompt = generateDataPrompt(cleanedInput, analysis);
+                    break;
+                default:
+                    prompt = generateGeneralPrompt(cleanedInput, analysis);
+            }
+            
+            return prompt;
+        }
+        
+        function generatePresentationPrompt(input, analysis) {
+            const { numbers, audience, tone, topics, deadline, constraints } = analysis;
+            const slideCount = numbers.slides || (numbers.all.length > 0 ? numbers.all[0] : 10);
+            const audienceText = audience || 'the intended audience (please specify if you have specific attendees in mind)';
+            
+            let prompt = `I need help creating a ${slideCount}-slide presentation.
+
+**Context from my request:**
+${input}
+
+**Presentation requirements:**
+
+1. **Structure and content:**
+   - Provide a complete outline with suggested content for each of the ${slideCount} slides
+   - For each slide, include:
+     * Compelling slide title
+     * 3-4 key points or main messages
+     * Recommended visual elements (charts, images, diagrams, icons)
+     * Any data or statistics that would strengthen the message
+
+2. **Flow and narrative:**
+   - Opening slide: Create a hook that captures attention immediately
+   - Main content: Organize slides to tell a logical, compelling story
+   - Conclusion: Strong closing with clear takeaways and call to action
+   - Ensure smooth transitions between topics
+
+3. **Audience consideration:**
+   - Target audience: ${audienceText}`;
+            
+            if (tone) {
+                prompt += `\n   - Tone: ${tone}`;
+            }
+            
+            if (topics && topics.length > 0) {
+                prompt += `\n   - Key topics to cover: ${topics.join(', ')}`;
+            }
+            
+            prompt += `\n\n4. **Visual recommendations:**
+   - Suggest specific chart types, imagery, or layouts for each slide
+   - Indicate which slides need data visualizations vs. conceptual diagrams
+   - Note any slides that would benefit from icons or illustrations`;
+            
+            if (constraints && constraints.length > 0) {
+                prompt += `\n\n5. **Special requirements:**\n`;
+                constraints.forEach(c => prompt += `   - ${c}\n`);
+            }
+            
+            if (deadline) {
+                prompt += `\n\n**Timeline:** ${deadline}`;
+            }
+            
+            prompt += `\n\nPlease also provide speaker notes or talking points for the 3 most critical slides in the presentation.`;
+            
+            return prompt;
+        }
+        
+        function generateEmailPrompt(input, analysis) {
+            const { audience, tone, topics, deadline, purpose } = analysis;
+            const audienceText = audience || 'the recipient';
+            const toneText = tone || 'professional yet approachable';
+            
+            let prompt = `I need to draft an email with the following context:
+
+**What I need:**
+${input}
+
+**Email specifications:**
+
+1. **Audience and tone:**
+   - Recipient: ${audienceText}
+   - Desired tone: ${toneText}`;
+            
+            if (purpose) {
+                prompt += `\n   - Purpose: ${purpose}`;
+            }
+            
+            prompt += `\n\n2. **Email structure:**
+   - Subject line: Clear, specific, and appropriate for the situation
+   - Greeting: Match the formality level to the relationship
+   - Opening: Establish context quickly and clearly
+   - Body: Present information in 2-3 focused paragraphs
+   - Closing: Include clear next steps or call to action
+   - Sign-off: Professional and appropriate
+
+3. **Content guidelines:**
+   - Be direct and respectful of the recipient's time
+   - Make the main point clear early
+   - Use specific details where relevant
+   - Anticipate and address potential questions`;
+            
+            if (topics && topics.length > 0) {
+                prompt += `\n   - Key topics to address: ${topics.join(', ')}`;
+            }
+            
+            if (deadline) {
+                prompt += `\n   - Timeline/urgency: ${deadline}`;
+            }
+            
+            prompt += `\n\n4. **Additional requests:**
+   - After drafting, briefly explain your key choices
+   - Suggest an alternative subject line option
+   - Note any important considerations for this type of communication`;
+            
+            return prompt;
+        }
+        
+        function generateAnalysisPrompt(input, analysis) {
+            const { topics, audience, constraints } = analysis;
+            
+            let prompt = `I need a thorough analysis of the following:
+
+**What needs to be analyzed:**
+${input}
+
+**Analysis structure:**
+
+1. **Executive summary** (2-3 sentences)
+   - Highlight the most critical findings upfront
+   - Focus on actionable insights
+
+2. **Key findings:**
+   - Present main insights with supporting evidence
+   - Use specific data points, quotes, or examples
+   - Organize from most to least significant
+
+3. **Detailed examination:**
+   - Break down the subject systematically`;
+            
+            if (topics && topics.length > 0) {
+                prompt += `\n   - Pay particular attention to: ${topics.join(', ')}`;
+            }
+            
+            prompt += `\n   - Explain the significance of important patterns or trends
+   - Note any surprising discoveries or outliers
+   - Consider both quantitative and qualitative aspects
+
+4. **Implications and context:**
+   - What do these findings mean in practical terms?
+   - How do they relate to broader trends or concerns?
+   - What are the potential consequences or applications?
+
+5. **Recommendations:**
+   - Provide 3-5 specific, actionable recommendations
+   - Prioritize by impact and feasibility
+   - Explain the reasoning behind each recommendation
+
+6. **Considerations and limitations:**
+   - Note any caveats or uncertainties
+   - Identify gaps in information
+   - Suggest areas for further investigation`;
+            
+            if (audience) {
+                prompt += `\n\n**Audience:** Tailor the analysis for ${audience}`;
+            }
+            
+            if (constraints && constraints.length > 0) {
+                prompt += `\n\n**Constraints:**\n`;
+                constraints.forEach(c => prompt += `- ${c}\n`);
+            }
+            
+            prompt += `\n\nPlease cite specific sections or evidence throughout your analysis.`;
+            
+            return prompt;
+        }
+        
+        function generateContentPrompt(input, analysis) {
+            const { numbers, audience, tone, topics, constraints } = analysis;
+            const wordCount = numbers.words || (numbers.all.find(n => n > 100) ? numbers.all.find(n => n > 100) : 800);
+            const audienceText = audience || 'your target readers (consider specifying for better results)';
+            const toneText = tone || 'engaging and informative';
+            
+            let prompt = `I need to create content based on this request:
+
+**What I'm looking for:**
+${input}
+
+**Content specifications:**
+
+1. **Core requirements:**
+   - Target audience: ${audienceText}
+   - Approximate length: ${wordCount} words
+   - Tone and style: ${toneText}`;
+            
+            if (topics && topics.length > 0) {
+                prompt += `\n   - Topics to cover: ${topics.join(', ')}`;
+            }
+            
+            prompt += `\n\n2. **Structure and flow:**
+   - Opening: Create a hook that immediately engages the reader
+   - Body: Organize content with clear progression and logical sections
+   - Include specific examples, anecdotes, or case studies
+   - Closing: Strong conclusion with memorable takeaways
+
+3. **Content quality:**
+   - Make it practical and actionable where relevant
+   - Balance information with readability
+   - Use concrete details rather than vague generalities
+   - Incorporate relevant data or research if appropriate`;
+            
+            if (constraints && constraints.length > 0) {
+                prompt += `\n\n4. **Special requirements:**\n`;
+                constraints.forEach(c => prompt += `   - ${c}\n`);
+            }
+            
+            prompt += `\n\n5. **Additional deliverables:**
+   - Suggest 3 compelling title options
+   - Identify 4-5 key points that must be included
+   - Recommend content format (blog post, article, guide, white paper)
+   - Note where visual elements would enhance the content (charts, images, infographics)
+
+Please ensure the content is well-researched and authoritative while remaining accessible.`;
+            
+            return prompt;
+        }
+        
+        function generateBrainstormPrompt(input, analysis) {
+            const { numbers, constraints, purpose, deadline } = analysis;
+            const itemCount = numbers.items || 10;
+            
+            let prompt = `I need creative brainstorming help for:
+
+**The challenge:**
+${input}`;
+            
+            if (purpose) {
+                prompt += `\n\n**Goal:** ${purpose}`;
+            }
+            
+            prompt += `\n\n**Brainstorming structure:**
+
+1. **Generate ${itemCount} diverse ideas** that address this need
+
+2. **For each idea, provide:**
+   - Clear, descriptive name
+   - Brief explanation (2-3 sentences) of how it works
+   - Key benefits and advantages
+   - Potential challenges or considerations
+   - Estimated difficulty level (easy, moderate, challenging)
+
+3. **Organize by category:**
+   - Quick wins (can be implemented immediately)
+   - Medium-term initiatives (require some planning)
+   - Long-term strategies (significant investment or time)
+
+4. **Budget consideration:**
+   - Identify 3 low-cost or no-cost options
+   - Note 2-3 premium options that require investment
+   - Explain the value proposition for higher-cost ideas`;
+            
+            if (constraints && constraints.length > 0) {
+                prompt += `\n\n5. **Constraints to consider:**\n`;
+                constraints.forEach(c => prompt += `   - ${c}\n`);
+            }
+            
+            if (deadline) {
+                prompt += `\n\n**Timeline:** ${deadline}`;
+            }
+            
+            prompt += `\n\n6. **Final recommendations:**
+   - Highlight your top 3 recommendations
+   - Explain why these stand out
+   - Suggest a practical implementation sequence
+
+Think creatively and include both conventional and innovative approaches.`;
+            
+            return prompt;
+        }
+        
+        function generateDataPrompt(input, analysis) {
+            const { topics, audience } = analysis;
+            
+            let prompt = `I need help with data analysis and presentation:
+
+**Data context:**
+${input}
+
+**Analysis requirements:**
+
+1. **Initial approach:**
+   - Identify the key questions this data should answer
+   - Determine which metrics or patterns are most important
+   - Outline the analysis methodology`;
+            
+            if (topics && topics.length > 0) {
+                prompt += `\n   - Focus areas: ${topics.join(', ')}`;
+            }
+            
+            prompt += `\n\n2. **Analysis deliverables:**
+   - Calculate and present key statistics (means, medians, totals, etc.)
+   - Identify significant trends or patterns
+   - Highlight outliers, anomalies, or unexpected findings
+   - Compare across relevant dimensions or time periods
+
+3. **Visualization strategy:**
+   - Recommend 4-5 specific chart or graph types
+   - For each visualization, explain:
+     * What insight it reveals
+     * Why this format is most effective
+     * What audience should focus on
+
+4. **Data presentation:**
+   - Organize findings in a clear, logical structure
+   - Use tables for detailed comparisons
+   - Provide both summary views and detailed breakdowns
+   - Make the data story easy to follow
+
+5. **Insights and actions:**
+   - What story does this data tell?
+   - What are the key takeaways?
+   - What decisions or actions does this support?
+   - What questions remain unanswered?`;
+            
+            if (audience) {
+                prompt += `\n\n**Presentation audience:** ${audience} (adjust complexity accordingly)`;
+            }
+            
+            prompt += `\n\nPlease structure the analysis for easy scanning and quick comprehension.`;
+            
+            return prompt;
+        }
+        
+        function generateGeneralPrompt(input, analysis) {
+            const { audience, tone, topics, constraints, purpose } = analysis;
+            
+            let prompt = `I need assistance with the following:
+
+**My request:**
+${input}`;
+            
+            if (purpose) {
+                prompt += `\n\n**Goal:** ${purpose}`;
+            }
+            
+            prompt += `\n\n**Response structure:**
+
+1. **Task clarification:**
+   - Confirm your understanding of what needs to be accomplished
+   - Note any ambiguities or assumptions you're making
+   - Ask for clarification if critical information is missing
+
+2. **Approach:**`;
+            
+            if (audience) {
+                prompt += `\n   - Consider the audience: ${audience}`;
+            }
+            
+            if (tone) {
+                prompt += `\n   - Match the tone: ${tone}`;
+            }
+            
+            if (topics && topics.length > 0) {
+                prompt += `\n   - Address these topics: ${topics.join(', ')}`;
+            }
+            
+            prompt += `\n   - Organize information logically with clear sections
+   - Include specific examples or concrete details
+   - Provide actionable insights where relevant
+
+3. **Multiple perspectives:**
+   - If there are different valid approaches, present them
+   - Explain the pros and cons of each option
+   - Recommend the best approach for this specific situation
+   - Explain your reasoning`;
+            
+            if (constraints && constraints.length > 0) {
+                prompt += `\n\n4. **Constraints to observe:**\n`;
+                constraints.forEach(c => prompt += `   - ${c}\n`);
+            }
+            
+            prompt += `\n\nPlease be thorough and explain your reasoning at key decision points.`;
+            
+            return prompt;
+        }
+        
+        function copyPrompt() {
+            const promptText = document.getElementById('optimizedPrompt').value;
+            
+            if (!promptText) {
+                alert('Generate a prompt first!');
+                return;
+            }
+            
+            navigator.clipboard.writeText(promptText).then(() => {
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                alert('Failed to copy. Please copy manually.');
+            });
+        }
+    </script>
+</body>
+</html>
