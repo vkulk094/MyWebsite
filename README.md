@@ -1,5 +1,3 @@
-Below is a ready-to-paste `README.md` for your repo (built around what is visible in the repository tree: `config.yaml`, `build.ps1`, Hugo-style folders like `content/`, `layouts/`, `static/`, and a `themes/` directory plus `.gitmodules`). ([GitHub][1])
-
 ````md
 # MyWebsite
 
