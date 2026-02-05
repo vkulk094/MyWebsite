@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools | Vaibhav Kulkarni</title>
+    <meta name="description" content="Free online tools and utilities by Vaibhav Kulkarni">
+    <link rel="icon" href="/images/dna.png" type="image/gif">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #18191a 0%, #212529 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #e4e6eb;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: #00ffe7;
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+        
+        .back-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #00ffe7;
+        }
+        
+        .subtitle {
+            color: #b0b3b8;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .tool-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 231, 0.1);
+            border-color: rgba(0, 255, 231, 0.3);
+        }
+        
+        .tool-card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        
+        .tool-card p {
+            color: #b0b3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .tool-card .tag {
+            display: inline-block;
+            background: rgba(0, 255, 231, 0.1);
+            color: #00ffe7;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+        }
+        
+        .coming-soon {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        .coming-soon .tag {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+        }
+        
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: #00ffe7;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Back to vaibhavkulkarni.bio</a>
+        
+        <h1>🛠️ Tools</h1>
+        <p class="subtitle">Free online tools and utilities I've built</p>
+        
+        <div class="tools-grid">
+            <a href="/tools/voice-prompt-optimizer.html" class="tool-card">
+                <h2>Voice to Claude Prompt Converter</h2>
+                <p>Transform casual voice input or messy transcriptions into structured, effective Claude prompts. Handles filler words, repeated phrases, and fragmented thoughts.</p>
+                <span class="tag">AI</span>
+                <span class="tag">Productivity</span>
+            </a>
+            
+            <div class="tool-card coming-soon">
+                <h2>More Tools Coming Soon</h2>
+                <p>I'm working on more useful tools for researchers, developers, and bioinformatics enthusiasts. Stay tuned!</p>
+                <span class="tag">Coming Soon</span>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Built by <a href="/">Vaibhav Kulkarni</a> | <a href="https://github.com/vkulk094">GitHub</a></p>
+        </footer>
+    </div>
+</body>
+</html>

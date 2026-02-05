@@ -133,12 +133,11 @@ header .navbar.animate {
 #hero a.btn.social-icon {
     color: var(--primary-color) !important;
     line-height: 0%;
-    border-radius: 40%;
-    margin-top: 40px;
-    padding: 1rem;
-    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    margin-top: 50px;
+    padding: 0.7rem;
+    border: 1px solid var(--primary-color);
     transition: none;
-    font-size: 2rem !important;
 }
 
 #hero a.btn.social-icon img {
@@ -149,44 +148,13 @@ header .navbar.animate {
     opacity: 0.8;
 }
 
-#hero a.resume-btn {
-    font-size: 3rem !important;
-    padding: 1.5rem 3rem !important;
-    background-color: var(--primary-color) !important;
+#hero a.btn {
+    margin-top: 50px;
+    padding: 0.7rem 1.75rem;
+    border: 1px solid var(--primary-color);
     color: var(--text-color) !important;
-    border-radius: 1rem !important;
-    text-decoration: none !important;
-    display: inline-block !important;
-    transition: all 0.3s ease !important;  /* Smooth transition for hover effects */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;  /* Initial shadow */
-    margin-top: 2rem !important;  /* Add space above the button */
-    margin-right: 1rem !important; /* Add spaces to the right */ 
-}
-
-#hero a.resume-btn:hover {
-    background-color: #ff6347 !important;  /* Change background on hover */
-    color: white !important;  /* Ensure text is readable */
-    transform: scale(1.1) !important;  /* Slightly enlarge button */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;  /* More intense shadow on hover */
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-    50% {
-        transform: scale(1.1);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-}
-
-#hero a.resume-btn {
-    animation: pulse 2s infinite !important;  /* Subtle pulsing animation */
+    border-radius: .75rem;
+    transition: none;
 }
 
 #hero a.btn:focus {
@@ -224,6 +192,8 @@ header .navbar.animate {
 #hero .hero-content > a:hover::after, #hero .hero-content > a:focus::after, #hero .hero-content > a:active::after {
     width: 100%;
 }
+
+
 
 /* about me */
 #about h3 {
@@ -471,7 +441,6 @@ header .navbar.animate {
     display: inline-block;
     text-decoration: none;
     color: var(--text-link-color) !important;
-    font-size: 2.1rem !important;
 }
 
 #education .card .card-body > a h6::after {
@@ -562,7 +531,6 @@ header .navbar.animate {
     border-color: var(--primary-color) !important;
     background-color: var(--secondary-color) !important;
     color: var(--text-color) !important;
-    font-size: 2.3rem !important;
 }
 
 #contact .btn:hover {
